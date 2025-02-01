@@ -18,7 +18,7 @@ void Lcd_Clear (); // clear the LCD scream
 
 void Lcd_Send_Data (char data);  // send data to the lcd
 
-void Lcd_Send_String (char *str);  // send string to the lcd
+void Lcd_Send_String (char *str);  // send message to the lcd display (use a buffer)
 
 
 

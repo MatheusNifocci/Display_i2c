@@ -88,6 +88,6 @@ void Lcd_Init(){
 
 void Lcd_Send_String(char *str)
 {
-	while (*str) Lcd_Send_Data (*str++);
+	while (*str) Lcd_Send_Data (*str++); // Send a massage to LCD display
 }
 
