@@ -2,7 +2,7 @@
  * display_i2c.h
  *
  *  Created on: Nov 17, 2024
- *      Author: Matheus
+ *  Author: Matheus Nifocci
  */
 
 #ifndef INC_DISPLAY_I2C_H_

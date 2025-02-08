@@ -2,13 +2,13 @@
  * display_i2c.c
  *
  *  Created on: Nov 17, 2024
- *      Author: Matheus
+ *  Author: Matheus Nifocci
  */
 #include "main.h"
 #include "display_i2c.h"
 #include "i2c.h"
 
-#define SLAVE_ADDRESS_LCD 0x4E
+#define SLAVE_ADDRESS_LCD 0x4E // I2C addresss
 
 void Send_Cmd(char cmd){
 
@@ -20,7 +20,7 @@ void Send_Cmd(char cmd){
 	data_t[1] = data_u|0x08;  //en=0, rs=0 -> bxxxx1000
 	data_t[2] = data_l|0x0C;  //en=1, rs=0 -> bxxxx1100
 	data_t[3] = data_l|0x08;  //en=0, rs=0 -> bxxxx1000
-	HAL_I2C_Master_Transmit (&hi2c1, SLAVE_ADDRESS_LCD,(uint8_t *) data_t, 4, 100);
+	HAL_I2C_Master_Transmit (&hi2c1, SLAVE_ADDRESS_LCD,(uint8_t *) data_t, 4, 100); // use the HAL librarie i2c to transmit the data
 
 }
 
@@ -33,7 +33,7 @@ void Lcd_Send_Data (char data){
 	data_t[1] = data_u|0x09;  //en=0, rs=0 -> bxxxx1001
 	data_t[2] = data_l|0x0D;  //en=1, rs=0 -> bxxxx1101
 	data_t[3] = data_l|0x09;  //en=0, rs=0 -> bxxxx1001
-	HAL_I2C_Master_Transmit (&hi2c1, SLAVE_ADDRESS_LCD,(uint8_t *) data_t, 4, 100);
+	HAL_I2C_Master_Transmit (&hi2c1, SLAVE_ADDRESS_LCD,(uint8_t *) data_t, 4, 100);// use the HAL librarie i2c to transmit the data
 }
 
 void Lcd_Clear (){
